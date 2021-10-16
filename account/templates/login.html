@@ -1,0 +1,60 @@
+{% extends 'base.html'  %}
+
+
+{% block content %}
+
+      
+      <!-- Content -->
+      <div id="content"> 
+        
+        <!--======= PAGES INNER =========-->
+        <section class="chart-page padding-top-100 padding-bottom-100">
+          <div class="container"> 
+            
+            <!-- Payments Steps -->
+            <div class="shopping-cart"> 
+              
+              <!-- SHOPPING INFORMATION -->
+              <div class="cart-ship-info">
+                <div class="row"> 
+                  
+                  <!-- ESTIMATE SHIPPING & TAX -->
+                  <div class="col-sm-7">
+                    <h6>LOGIN YOUR ACCOUNT</h6>
+                    <form action="" method="POST" >
+                     {% csrf_token %}
+                      <ul class="row">
+                        <li class="col-md-12">
+                            {{form.non_field_errors}}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{field}}
+                                    {{field.help_text}}
+                                    {{field.errors}}
+                                </div>
+                            {% endfor  %} 
+                            </li> 
+                        <!-- LOGIN -->
+                        <li class="col-md-4">
+                        <br>
+                          <button type="submit" class="btn">LOGIN</button>
+                        </li>
+                        
+
+    
+                      </ul>
+                      <br>
+                        <div class="form-group">
+                                <a href="{% url 'account:register' %}" class="">Don't have an account? Sign up</a>
+                        </div>
+                    </form>
+                   
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {% endblock %}

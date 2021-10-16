@@ -1,0 +1,77 @@
+{% extends 'base.html'  %}
+
+
+{% block content %}
+    
+
+     
+  <!-- Content -->
+  <div id="content"> 
+    
+    <!--======= PAGES INNER =========-->
+    <section class="chart-page padding-top-100 padding-bottom-100">
+      <div class="container"> 
+        
+        <!-- Payments Steps -->
+        <div class="shopping-cart"> 
+          
+          <!-- SHOPPING INFORMATION -->
+          <div class="cart-ship-info register">
+            <div class="row"> 
+              
+              <!-- ESTIMATE SHIPPING & TAX -->
+              <div class="col-sm-12">
+                <h6>REGISTER</h6>
+                <form action="" method="POST">
+                {% csrf_token %}
+                  <ul class="row">
+
+                    <!-- USERNAME -->
+                    <li class="col-md-6">
+                      {{form.username}}
+                      {%for error in form.username.errors%}
+                        <li class="text-danger">{{error}}</li>
+                      {%endfor%}
+                    </li>
+
+                 <!-- USERNAME -->
+                 <li class="col-md-6">
+                    {{form.email}}
+                    {%for error in form.email.errors%}
+                      <li class="text-danger">{{error}}</li>
+                    {%endfor%}
+                  </li>
+
+                    
+                    <!-- LAST NAME -->
+                    <li class="col-md-6">
+                      {{form.password1}}
+                      {%for error in form.password1.errors%}
+                        <li class="text-danger">{{error}}</li>
+                        {%endfor%}
+                    </li>
+                    
+                    <!-- LAST NAME -->
+                    <li class="col-md-6">
+                      {{form.password2}}
+                      {%for error in form.password2.errors%}
+                        <li class="text-danger">{{error}}</li>
+                         {%endfor%}
+                    </li>
+                    
+                    
+                    <!-- SUBMIT -->
+                    <li class="col-md-6">
+                    <br>
+                      <button type="submit" class="btn">REGISTER NOW</button>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    {% endblock %}
