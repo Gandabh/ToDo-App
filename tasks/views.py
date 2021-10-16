@@ -23,6 +23,8 @@ def index(request):
 	context = {'tasks':tasks, 'form':form}
 	return render(request, 'list.html', context)
 
+
+
 def updateTask(request, pk):
 	task = Task.objects.get(id=pk)
 
@@ -37,6 +39,8 @@ def updateTask(request, pk):
 	context = {'form':form}
 
 	return render(request, 'update_task.html', context)
+
+
 
 def deleteTask(request, pk):
 	item = Task.objects.get(id=pk)
